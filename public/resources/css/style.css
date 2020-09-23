@@ -1,0 +1,191 @@
+html {
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+section {
+  padding: 2rem;
+}
+
+
+h2 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+} 
+
+h3 {
+  font-size: 2rem;
+}
+
+
+iframe {
+  width: 90%;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.red {
+  background: #E77166;
+  color: #fff;
+}
+.darkgray {
+  background: #3E3838;
+}
+.lightgray {
+  background: #E1E7EF;
+  color: #3E3838;
+}
+
+/* -----HEADER/NAV------- */
+
+header {
+  background: #fff;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+header img {
+  width: 20%; 
+  height: auto;
+}
+
+nav {
+  background: #3E3838;
+  padding: 1rem;
+  color: #fff;
+  width: 40%;
+}
+
+/* -----MAIN TAGLINE SECTION------- */
+
+.main {
+  padding: 1rem 2rem;
+}
+
+.main-heading {
+  font-size: 3.5rem;
+  line-height: 1.1;
+}
+
+/* -----CITY GUIDE INPUT SECTION------- */
+
+.search-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.city-guide__image {
+  width: 60%;
+  padding: 1rem;
+}
+
+.city-guide__input {
+  height: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.city-guide__submit {
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  border-radius: 10px;
+}
+
+.city-guide__submit:hover {
+  cursor: pointer;
+  background-image: linear-gradient(#fff, lightblue);
+}
+
+.city-guide__template {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.city-guide__template h1 {
+  font-size: 2.5rem;
+}
+
+.city-guide__categories {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.city-guide__categories * {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.city-guide__categories h2 {
+  border-bottom: 3px solid #ccc;
+  padding-bottom: 0.25rem;
+}
+
+.city-guide__categories li {
+  text-align: left;
+  width: 100%;
+}
+
+
+/* -----YOUTUBE VIDEOS SECTION------- */
+
+.footer {
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.video-layout {
+  margin: 1rem;
+}
+
+.video-layout iframe {
+  width: 100%;
+}
+
+
+/* -------BIGGER SCREEN MEDIA QUERIES------- */
+
+@media only screen and (min-width: 625px) {
+
+  .container {
+    width: 60%;
+  }
+
+  .main {
+    padding: none; 
+  }
+
+  .city-guide__section img {
+    width: 60%;
+  }
+
+  .podcast-player {
+    width: 60%;
+  }
+
+  .video-layout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .video-layout iframe {
+    width: 33%;
+  }
+
+  
+}
