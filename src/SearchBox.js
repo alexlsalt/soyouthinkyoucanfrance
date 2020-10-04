@@ -94,6 +94,8 @@ export default function SearchBox() {
               className="city-guide__input"
             />
           </form>
+
+          <img src={Image} alt="Nice, France" className="city-guide__image" />
         </>
       )}
 
@@ -101,7 +103,6 @@ export default function SearchBox() {
         <CityGuideTemplate onClick={handleClick} text={text} city={cityInfo} />
       )}
 
-      <img src={Image} alt="Nice, France" className="city-guide__image" />
     </div>
   );
 }
