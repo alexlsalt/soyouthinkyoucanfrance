@@ -124,7 +124,7 @@ nav {
 }
 
 .city-guide__categories * {
-  width: 40%;
+  width: 70%;
   margin: 0 auto;
 }
 
@@ -133,9 +133,13 @@ nav {
   padding-bottom: 0.25rem;
 }
 
+.city-guide__categories ul {
+  padding: 1rem 0;
+}
+
 .city-guide__categories li {
   text-align: left;
-  width: 100%;
+  width: 75%;
 }
 
 

@@ -7,6 +7,8 @@ import Footer from './Footer';
 
 function App() {
 
+
+  
   return (
     <div>
       <Header />
@@ -26,48 +28,8 @@ ReactDOM.render(
 
 
 
-// CITY GUIDE SLIDESHOW
-
-// let num = 1;
-
-// setInterval(() => {
-//   num++;
-
-//   if (num <= 4) {
-//     document.querySelector("#city-guide__image").src =
-//       `resources/img/city-guide${num}.jpg`;
-//   } else {
-//     num = 1;
-//   }
-// }, 1000);
 
 
-const restaurants = [
-  {
-    id: 1,
-    name: 'Midi Minuit',
-    address: '3 Place du Peyrou',
-    city: 'Toulouse'
-  },
-  {
-    id: 2,
-    name: 'Forno Gusto',
-    address: '21 rue Sainte-Ursule',
-    city: 'Toulouse'
-  },
-  {
-    id: 3,
-    name: 'Not TLS',
-    address: '1 Not TLS',
-    city: 'Not Toulouse'
-  },
-  {
-    id: 4,
-    name: 'Le Bol Bu',
-    address: '8 rue du May',
-    city: 'Toulouse'
-  }
-]
 
 
 // ON SUBMIT CLICK 
