@@ -7,7 +7,8 @@ export default function Header() {
     <header>
       <img src={Logo} alt="So You Think You Can France logo" />
       <nav>
-        City guides temporarily under construction!
+        <span className="navItem">City Guides</span>
+        <span className="navItem">Blog</span>
       </nav>
 
     </header>

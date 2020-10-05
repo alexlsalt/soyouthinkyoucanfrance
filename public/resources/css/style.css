@@ -58,10 +58,14 @@ header img {
 }
 
 nav {
+  width: 40%;
+}
+
+.navItem {
   background: #3E3838;
   padding: 1rem;
   color: #fff;
-  width: 40%;
+  margin: 0 0.5rem;
 }
 
 /* -----MAIN TAGLINE SECTION------- */
@@ -122,11 +126,15 @@ nav {
   box-shadow: 4px 4px gray;
 }
 
-.city-guide__template {
-  display: none;
+.city-guide-template {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 1px solid black;
+  width: 70%;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: #fff;
 }
 
 .city-guide__template h1 {
@@ -135,7 +143,7 @@ nav {
 
 .city-guide__categories {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -188,8 +196,9 @@ nav {
     padding: none; 
   }
 
-  .city-guide__section img {
-    width: 60%;
+  .city-guide__image {
+    display: none;
+    width: 40%;
   }
 
   .podcast-player {

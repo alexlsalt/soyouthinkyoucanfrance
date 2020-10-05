@@ -1,7 +1,8 @@
 import React from 'react';
+import * as Categories from './categories';
 import NewSearchButton from './NewSearchBtn';
 
-export default function CityGuideTemplate({ text, city, mustSee, onClick }) {
+export default function CityGuideTemplate({ text, city, onClick, restaurants, bars, cafes, nightclubs, museums }) {
 
 
 
@@ -9,93 +10,25 @@ export default function CityGuideTemplate({ text, city, mustSee, onClick }) {
     <div className="city-guide-template">
           <div className="city-guide__header">
             <h1>Living & Teaching in {text}, France</h1>
-            <h3>Population: {city.population}</h3>
-            <h3>Département: {city.departement}</h3>
+            <h4>Population: {city.population} | Département: {city.departement}</h4>
           </div>
 
           <div className="city-guide__categories">
-            <h2>Where to Eat</h2>
+            <Categories.Category category={restaurants} title='Where to Eat' />
+            <Categories.Category category={bars} title='Where to Drink' />
+            <Categories.Category category={cafes} title='Best Spot to Grab a Coffee' />
+            <Categories.Category category={nightclubs} title='Where to Party & Dance' />
+            <Categories.Category category={museums} title='Museums to Visit' />
 
-            <h2>Where to Drink</h2>
-
-            <h2>Best Spot to Grab a Coffee</h2>
-            <h2>Where to Dance & Party</h2>
-            <h2>Museums to Visit</h2>
-            <h2>Must-See | Must-Do</h2>
-            <ul>
-              {city.mustSee.map((el) => (
-                <li key={city.mustSee.indexOf(el)}>{el}</li>
-              ))}
-            </ul>
-            <h2>Day & Weekend Trips</h2>
-            <ul>
-              {
-              city.travelIdeas.length > 0 &&
-                city.travelIdeas.map(el => (
-                  <li key={city.travelIdeas.indexOf(el)}>{el}</li>
-                  )) 
-              }
-              
-            </ul>
-            <h2>Outdoor Activities</h2>
-            <ul>
-              {
-                city.outdoorActivities.length > 0 &&
-                  city.outdoorActivities.map(el => (
-                    <li key={city.outdoorActivities.indexOf(el)}>{el}</li>
-                  )) 
-              }
-            </ul>
-              
-            <h2>Pleasant Walks</h2>
-            <ul>
-              {
-                city.walks.length > 0 &&
-                  city.walks.map(el => (
-                    <li key={city.walks.indexOf(el)}>{el}</li>
-                  )) 
-              }
-            </ul>
+            <Categories.MustSee city={city} />
+            <Categories.TravelIdeas city={city} />
+            <Categories.OutdoorActivities city={city} />
+            <Categories.Walks city={city} />
+            <Categories.HousingExamples city={city} />
+            <Categories.BestThings city={city} cityName={text} />
+            <Categories.WorstThings city={city} cityName={text} />
+            <Categories.ProTips city={city} cityName={text} />
             
-            <h2>Housing Examples</h2>
-            <ul>
-              {
-                city.housingExamples.length > 0 &&
-                  city.housingExamples.map(el => (
-                    <li key={city.housingExamples.indexOf(el)}>{el}</li>
-                  )) 
-              }
-            </ul>
-            
-            <h2>Best Things About Toulouse</h2>
-            <ul>
-              {
-                city.bestThings.length > 0 &&
-                  city.bestThings.map(el => (
-                    <li key={city.bestThings.indexOf(el)}>{el}</li>
-                  )) 
-              }
-            </ul>
-            
-            <h2>Worst Things About Toulouse</h2>
-            <ul>
-              {
-                city.worstThings.length > 0 &&
-                  city.worstThings.map(el => (
-                    <li key={city.worstThings.indexOf(el)}>{el}</li>
-                  )) 
-              }
-            </ul>
-            
-            <h2>Pro-Tips from Past & Current Teaching Assistants</h2>
-            <ul>
-              {
-                city.proTips.length > 0 &&
-                  city.proTips.map(el => (
-                    <li key={city.proTips.indexOf(el)}>{el}</li>
-                  )) 
-              }
-            </ul>
           </div>
 
           <NewSearchButton onClick={onClick} />

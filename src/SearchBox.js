@@ -3,21 +3,6 @@ import Image from "./img/city-guide2.jpg";
 import { db } from "./firebase";
 import CityGuideTemplate from "./CityGuideTemplate";
 
-// function cycleThruImages() {
-//   let num = 1;
-
-//   setInterval(() => {
-//     num++;
-
-//     if (num <= 4) {
-//       document.querySelector(
-//         "#city-guide__image"
-//       ).src = `resources/img/city-guide${num}.jpg`;
-//     } else {
-//       num = 1;
-//     }
-//   }, 1000);
-// }
 
 export default function SearchBox() {
   const [text, setText] = useState("Enter a French city");
@@ -33,8 +18,14 @@ export default function SearchBox() {
     housingExamples: [],
     bestThings: [],
     worstThings: [],
-    proTips: [],
+    proTips: []
   });
+  
+  const [restaurants, setRestaurants] = useState([]);
+  const [bars, setBars] = useState([]);
+  const [cafes, setCafes] = useState([]);
+  const [nightclubs, setNightclubs] = useState([]);
+  const [museums, setMuseums] = useState([]);
 
   const [showTemplate, setShowTemplate] = useState(false);
 
@@ -48,7 +39,6 @@ export default function SearchBox() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("hello");
     setShowTemplate(true);
 
     db.collection("cities")
@@ -72,12 +62,60 @@ export default function SearchBox() {
         });
       })
       .catch((error) => alert("Error, please try your search again."));
+
+
+
+      // Get Restaurant data from database
+      db.collection('restaurants')
+        .where('city', '==', text)
+        .get()
+        .then(snapshot => {
+          const data = snapshot.docs.map((doc) => doc.data());
+          setRestaurants(data);
+        })
+
+      // Get Bar data from database
+
+      db.collection('bars')
+      .where('city', '==', text)
+      .get()
+      .then((snapshot) => {
+        const data = snapshot.docs.map((doc) => doc.data());
+        setBars(data);
+      })
+
+      // Get Cafe data from database
+      db.collection('cafes')
+      .where('city', '==', text)
+      .get()
+      .then((snapshot) => {
+        const data = snapshot.docs.map((doc) => doc.data());
+        setCafes(data);
+      })
+
+      // Get Nightclub data from database
+      db.collection('nightclubs')
+      .where('city', '==', text)
+      .get()
+      .then((snapshot) => {
+        const data = snapshot.docs.map((doc) => doc.data());
+        setNightclubs(data);
+      })
+
+      // Get Museum data from database
+      db.collection('museums')
+      .where('city', '==', text)
+      .get()
+      .then((snapshot) => {
+        const data = snapshot.docs.map((doc) => doc.data());
+        setMuseums(data);
+      })
   };
 
   // for the 'new search' button to reinitialize state
   const handleClick = (event) => {
     setShowTemplate(false);
-    setText("");
+    setText('Enter a French city');
   };
 
   return (
@@ -100,7 +138,16 @@ export default function SearchBox() {
       )}
 
       {showTemplate && (
-        <CityGuideTemplate onClick={handleClick} text={text} city={cityInfo} />
+        <CityGuideTemplate 
+          onClick={handleClick} 
+          text={text} 
+          city={cityInfo} 
+          restaurants={restaurants} 
+          bars={bars} 
+          cafes={cafes}
+          nightclubs={nightclubs}
+          museums={museums}
+        />
       )}
 
     </div>
