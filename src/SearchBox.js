@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import Image from "./img/city-guide2.jpg";
 import { db } from "./firebase";
 import CityGuideTemplate from "./CityGuideTemplate";
-
 
 export default function SearchBox() {
   const [text, setText] = useState("Enter a French city");
@@ -20,12 +18,13 @@ export default function SearchBox() {
     worstThings: [],
     proTips: []
   });
-  
+
   const [restaurants, setRestaurants] = useState([]);
   const [bars, setBars] = useState([]);
   const [cafes, setCafes] = useState([]);
   const [nightclubs, setNightclubs] = useState([]);
   const [museums, setMuseums] = useState([]);
+
 
   const [showTemplate, setShowTemplate] = useState(false);
 
@@ -33,21 +32,20 @@ export default function SearchBox() {
     setText(event.target.value);
   };
 
-  const clearField = (event) => {
-    setText("");
+  const clearField = () => {
+    setText('');
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setShowTemplate(true);
 
     db.collection("cities")
       .where("name", "==", text)
       .get()
       .then((snapshot) => {
+        setShowTemplate(true);
         const data = snapshot.docs.map((doc) => doc.data());
         const city = data[0];
-        console.log(city);
         setCityInfo({
           population: city.population,
           departement: city.departement,
@@ -61,7 +59,12 @@ export default function SearchBox() {
           proTips: city.proTips,
         });
       })
-      .catch((error) => alert("Error, please try your search again."));
+      .catch((error) => {
+        setText('Enter a French city');
+        setShowTemplate(false);
+        alert(`Please make sure your search entry is capitalized corrrectly (i.e. Toulouse or Aix-en-Provence). Otherwise, it's possible that there isn't a city guide for ${text} yet.`);
+        }
+      );
 
 
 
@@ -133,7 +136,6 @@ export default function SearchBox() {
             />
           </form>
 
-          <img src={Image} alt="Nice, France" className="city-guide__image" />
         </>
       )}
 
