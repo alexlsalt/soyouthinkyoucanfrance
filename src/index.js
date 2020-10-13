@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import Header from './Header';
 import SearchBox from './SearchBox';
 import Blog from './Blog';
-import Main from './Main';
 import Footer from './Footer';
 
 function App() {
@@ -13,8 +12,6 @@ function App() {
   return (
     <div>
       <Header activeTab={activeTab} onTabChange={setActiveTab} />
-      <Main />
-
       <Content tab={activeTab} />
       <Footer />
     </div>

@@ -1,10 +1,15 @@
 import React from "react";
+import Main from './Main';
 
 export default function Blog() {
+
   return (
     <div>
-      <h2>Bienvenue to the Blog Archives!</h2>
-      <h3>Note: this page is still under construction</h3>
+      <Main 
+        headline="Bienvenue to the Blog Archives!"
+        tagline="Note: this page is still under construction"
+      />
+      
       <div className="blog-posts">
         <ul>
           <li>10 Major Differences Between French & American High Schools</li>

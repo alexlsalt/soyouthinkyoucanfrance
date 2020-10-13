@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { db } from "./firebase";
+import Main from './Main';
 import CityGuideTemplate from "./CityGuideTemplate";
 
 export default function SearchBox() {
@@ -125,6 +126,10 @@ export default function SearchBox() {
     <div className="search-box">
       {!showTemplate && (
         <>
+          <Main 
+            headline="Live your best life while teaching English in France"
+            tagline="YOUR FAVE RESOURCE FOR ALL THINGS LIVING AND TEACHING IN FRANCE"   
+          />
           <h2>Search for a city guide below and press enter:</h2>
           <form onSubmit={handleSubmit}>
             <input
