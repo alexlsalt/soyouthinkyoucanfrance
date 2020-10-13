@@ -24,3 +24,4 @@ yarn-error.log*
 
 # still in production
 /src/Posts
+/src/Test.js
