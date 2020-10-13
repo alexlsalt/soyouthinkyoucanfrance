@@ -61,12 +61,26 @@ nav {
   width: 40%;
 }
 
-.navItem {
-  background: #3E3838;
-  padding: 1rem;
-  color: #fff;
-  margin: 0 0.5rem;
+nav ul {
+  list-style: none;
+  display: flex;
 }
+
+.navItem button {
+  background: transparent;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  padding: 1rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
+.navItem button:focus {
+  border: none;
+}
+
+
 
 /* -----MAIN TAGLINE SECTION------- */
 
@@ -175,6 +189,19 @@ nav {
   width: 80%;
 }
 
+/* ----- BLOG ------- */
+
+.blog-posts {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;;
+}
+
+.blog-posts li {
+  list-style: none;
+  text-align: left;
+}
 
 /* -----YOUTUBE VIDEOS SECTION------- */
 

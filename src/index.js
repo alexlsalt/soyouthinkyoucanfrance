@@ -1,24 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import Header from './Header';
 import SearchBox from './SearchBox';
+import Blog from './Blog';
 import Main from './Main';
 import Footer from './Footer';
 
 function App() {
 
+  const [activeTab, setActiveTab] = useState('guides');
 
-  
   return (
     <div>
-      <Header />
+      <Header activeTab={activeTab} onTabChange={setActiveTab} />
       <Main />
-      <SearchBox />
+
+      <Content tab={activeTab} />
       <Footer />
     </div>
   )
-
 }
+
+const Content = ({ tab }) => {
+  switch (tab) {
+    default:
+      case 'guides':
+        return <SearchBox />;
+      case 'blog':
+        return <Blog />
+  }
+};
 
 ReactDOM.render(
   <App />,
