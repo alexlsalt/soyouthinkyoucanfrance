@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { db } from "../firebase";
 import Main from './Main';
 import CityGuideTemplate from "./CityGuideTemplate";
+import DisplayCityList from "./DisplayCityList";
 
 export default function SearchBox() {
   const [text, setText] = useState("Enter a French city");
@@ -26,6 +27,7 @@ export default function SearchBox() {
   const [nightclubs, setNightclubs] = useState([]);
   const [museums, setMuseums] = useState([]);
 
+  const [cityList, setCityList] = useState([]);
 
   const [showTemplate, setShowTemplate] = useState(false);
 
@@ -114,13 +116,31 @@ export default function SearchBox() {
         const data = snapshot.docs.map((doc) => doc.data());
         setMuseums(data);
       })
+
+
+      // Clear city list if displayed
+      if (cityList.length) {
+        setCityList([]);
+      }
   };
 
   // for the 'new search' button to reinitialize state
   const handleClick = (event) => {
     setShowTemplate(false);
     setText('Enter a French city');
+    setCityList([]);
   };
+
+  // for DisplayCityList
+  const displayCityList = () => {
+    db.collection('cities')
+      .get()
+      .then(snapshot => {
+        const data = snapshot.docs.map(doc => doc.data());
+        const cityList = data.map(el => el.name);
+        setCityList(cityList);
+      })
+  }
 
   return (
     <div className="search-box">
@@ -156,6 +176,8 @@ export default function SearchBox() {
           museums={museums}
         />
       )}
+
+      <DisplayCityList onClick={displayCityList} list={cityList} />
 
     </div>
   );

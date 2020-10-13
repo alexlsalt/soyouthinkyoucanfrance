@@ -189,6 +189,21 @@ nav ul {
   width: 80%;
 }
 
+.city-list-display {
+  margin-top: 4rem;
+}
+
+.city-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.city-list li {
+  list-style: none;
+  margin: 0.5rem;
+}
+
 /* ----- BLOG ------- */
 
 .blog-posts {
