@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
-import Header from './Header';
-import SearchBox from './SearchBox';
-import Blog from './Blog';
-import Footer from './Footer';
+import Header from './components/Header';
+import SearchBox from './components/SearchBox';
+import Blog from './components/Blog';
+import Footer from './components/Footer';
 
 function App() {
 
