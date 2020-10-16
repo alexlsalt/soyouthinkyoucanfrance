@@ -70,6 +70,7 @@ nav ul {
   background: transparent;
   text-transform: uppercase;
   font-weight: bold;
+  font-size: 1.5rem;
   border: none;
   padding: 1rem;
   margin: 0 0.5rem;
@@ -109,13 +110,13 @@ nav ul {
 }
 
 .city-guide__input {
-  height: 2rem;
+  height: 4rem;
   margin-bottom: 0.5rem;
   border: 2px solid gray;
   border-radius: 10px;
   box-shadow: 4px 4px #E77166;
   font-family: 'Open Sans', sans-serif;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
 }
@@ -193,10 +194,23 @@ nav ul {
   margin-top: 4rem;
 }
 
+.city-list-display button {
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #ccc;
+}
+
+.city-list-display button:hover {
+  background-color: #ddd;
+}
+
 .city-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 .city-list li {
