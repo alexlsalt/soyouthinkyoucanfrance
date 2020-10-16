@@ -7,7 +7,7 @@ export default function Main({ headline, tagline }) {
       <h1 className="main-heading">
         {headline}
       </h1>
-      <h2 className="container">
+      <h2>
         {tagline}
       </h2>
     </div>
