@@ -1,6 +1,7 @@
 import React from 'react';
 import * as CategoryItem from './CategoryItem';
 import NewSearchButton from './NewSearchBtn';
+import Main from './Main';
 
 export default function CityGuideTemplate({ text, city, onClick, restaurants, bars, cafes, nightclubs, museums }) {
 
@@ -8,6 +9,9 @@ export default function CityGuideTemplate({ text, city, onClick, restaurants, ba
 
   return (
     <div className="city-guide-template">
+
+          <Main headline="" tagline="" />
+
           <div className="city-guide__header">
             <h1>Living & Teaching in {text}, France</h1>
             <h4>Population: {city.population} | Département: {city.departement}</h4>
