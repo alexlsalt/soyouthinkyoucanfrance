@@ -22,7 +22,7 @@ export default function CityGuideTemplate({ text, city, onClick, restaurants, ba
             <CategoryItem category={nightclubs} title='Where to Party & Dance' type='address' />
             <CategoryItem category={museums} title='Museums to Visit' type='address' />
 
-            <CategoryItem category={city.mustSee} title='Must See | Must Do' type='list' type='list' />
+            <CategoryItem category={city.mustSee} title='Must See | Must Do' type='list' />
             <CategoryItem category={city.travelIdeas} title='Travel Ideas' type='list' />
             <CategoryItem category={city.outdoorActivities} title='Outdoor Activities' type='list' />
             <CategoryItem category={city.walks} title='Pleasant Walks' type='list' />
