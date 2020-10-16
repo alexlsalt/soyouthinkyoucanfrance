@@ -121,3 +121,7 @@ export default function SearchBox() {
 ```
 
 I'd like to explore the useReducer hook a bit more to see if this can be improved.
+
+## Sample City Guide - Lyon
+
+![City Guide Template screenshot](public/img/city-guide-screenshot.png)
