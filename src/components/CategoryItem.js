@@ -1,34 +1,25 @@
 import React from "react";
 
-
-export function CategoryWithAddress({ category, title }) {
+export default function CategoryItem({ category, title, type }) {
   if (category.length === 0) return null;
-    return (
-      <div>
+
+  return (
+    <div>
         <h2>{title}</h2>
         <ul>
           {
+            type === 'address' && 
             category.map(el => (
               <li key={category.indexOf(el)}>{el.name} | {el.address}</li>
             ))
           }
-        </ul>
-      </div>
-    )
-}
-
-export function CategoryWithList({ category, title }) {
-  if (category.length === 0) return null;
-    return (
-      <div>
-        <h2>{title}</h2>
-        <ul>
           {
+            type === 'list' && 
             category.map(el => (
               <li key={category.indexOf(el)}>{el}</li>
             ))
           }
         </ul>
       </div>
-    )
+  )
 }

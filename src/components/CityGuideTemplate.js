@@ -1,11 +1,9 @@
 import React from 'react';
-import * as CategoryItem from './CategoryItem';
+import CategoryItem from './CategoryItem';
 import NewSearchButton from './NewSearchBtn';
 import Main from './Main';
 
 export default function CityGuideTemplate({ text, city, onClick, restaurants, bars, cafes, nightclubs, museums }) {
-
-
 
   return (
     <div className="city-guide-template">
@@ -18,20 +16,20 @@ export default function CityGuideTemplate({ text, city, onClick, restaurants, ba
           </div>
 
           <div className="city-guide__categories">
-            <CategoryItem.CategoryWithAddress category={restaurants} title='Where to Eat' />
-            <CategoryItem.CategoryWithAddress category={bars} title='Where to Drink' />
-            <CategoryItem.CategoryWithAddress category={cafes} title='Best Spot to Grab a Coffee' />
-            <CategoryItem.CategoryWithAddress category={nightclubs} title='Where to Party & Dance' />
-            <CategoryItem.CategoryWithAddress category={museums} title='Museums to Visit' />
+            <CategoryItem category={restaurants} title='Where to Eat' type='address' />
+            <CategoryItem category={bars} title='Where to Drink' type='address' />
+            <CategoryItem category={cafes} title='Best Spot to Grab a Coffee' type='address' />
+            <CategoryItem category={nightclubs} title='Where to Party & Dance' type='address' />
+            <CategoryItem category={museums} title='Museums to Visit' type='address' />
 
-            <CategoryItem.CategoryWithList category={city.mustSee} title='Must See | Must Do' />
-            <CategoryItem.CategoryWithList category={city.travelIdeas} title='Travel Ideas' />
-            <CategoryItem.CategoryWithList category={city.outdoorActivities} title='Outdoor Activities' />
-            <CategoryItem.CategoryWithList category={city.walks} title='Pleasant Walks' />
-            <CategoryItem.CategoryWithList category={city.housingExamples} title='Housing Examples' />
-            <CategoryItem.CategoryWithList category={city.bestThings} title='Best Things About City' />
-            <CategoryItem.CategoryWithList category={city.worstThings} title='Worst Things About City' />
-            <CategoryItem.CategoryWithList category={city.proTips} title='Pro Tips from Past & Current Teaching Assistants' />
+            <CategoryItem category={city.mustSee} title='Must See | Must Do' type='list' type='list' />
+            <CategoryItem category={city.travelIdeas} title='Travel Ideas' type='list' />
+            <CategoryItem category={city.outdoorActivities} title='Outdoor Activities' type='list' />
+            <CategoryItem category={city.walks} title='Pleasant Walks' type='list' />
+            <CategoryItem category={city.housingExamples} title='Housing Examples' type='list' />
+            <CategoryItem category={city.bestThings} title='Best Things About City' type='list' />
+            <CategoryItem category={city.worstThings} title='Worst Things About City' type='list' />
+            <CategoryItem category={city.proTips} title='Pro Tips from Past & Current Teaching Assistants' type='list' />
             
           </div>
 
