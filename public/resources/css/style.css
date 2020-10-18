@@ -1,11 +1,8 @@
-html {
+.app {
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   text-align: center;
-}
 
-section {
-  padding: 2rem;
 }
 
 
@@ -50,6 +47,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  max-width: 100%;
 }
 
 header img {
@@ -58,12 +56,17 @@ header img {
 }
 
 nav {
-  width: 40%;
+  padding-right: 1rem;;
 }
 
 nav ul {
   list-style: none;
   display: flex;
+  padding: 0;
+}
+
+nav li {
+  padding-left: 1rem;
 }
 
 .navItem button {
@@ -72,8 +75,6 @@ nav ul {
   font-weight: bold;
   font-size: 1.5rem;
   border: none;
-  padding: 1rem;
-  margin: 0 0.5rem;
   cursor: pointer;
 }
 

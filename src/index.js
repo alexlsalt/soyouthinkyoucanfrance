@@ -10,7 +10,7 @@ function App() {
   const [activeTab, setActiveTab] = useState('guides');
 
   return (
-    <div>
+    <div className='app'>
       <Header activeTab={activeTab} onTabChange={setActiveTab} />
       <Content tab={activeTab} />
       <Footer />
