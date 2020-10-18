@@ -1,8 +1,10 @@
-.app {
+html {
   font-size: 16px;
+}
+
+.app {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
-
 }
 
 
@@ -73,7 +75,7 @@ nav li {
   background: transparent;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1rem;
   border: none;
   cursor: pointer;
 }
