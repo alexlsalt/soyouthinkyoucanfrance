@@ -1,28 +1,33 @@
 import React from 'react';
 import Logo from '../img/logo.jpg';
 
-export default function Header({ activeTab, onTabChange }) {
+import { Link } from 'react-router-dom';
 
-  const pageClass = tabName => 
-    `navItem ${
-      activeTab === tabName ? 'active' : ''
-    }`;
+export default function Header() {
 
   return (
+
     <header>
       <img src={Logo} alt="So You Think You Can France logo" />
       <nav>
         <ul>
-          <li className={pageClass('guides')}>
-            <button onClick={() => onTabChange('guides')}>City Guides</button>
+          <li>
+            <Link to ='/'>
+              <button>City Guides</button></Link>
           </li>
-          <li className={pageClass('blog')}>
-            <button onClick={() => onTabChange('blog')}>Blog</button>
+          <li>
+            <Link to='/blog'>
+              <button>Blog</button>
+            </Link>
           </li>
         </ul>
       </nav>
 
     </header>
+
+
+    
+    
   )
 
 

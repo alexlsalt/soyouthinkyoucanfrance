@@ -1,59 +1,31 @@
-import React, {useState} from 'react';
-import ReactDOM from 'react-dom';
-import Header from './components/Header';
-import SearchBox from './components/SearchBox';
-import Blog from './components/Blog';
-import Footer from './components/Footer';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ReactDOM from "react-dom";
+import Header from "./components/Header";
+import SearchBox from "./components/SearchBox";
+import Blog from "./components/Blog";
+import Footer from "./components/Footer";
 
 function App() {
 
-  const [activeTab, setActiveTab] = useState('guides');
 
   return (
-    <div className='app'>
-      <Header activeTab={activeTab} onTabChange={setActiveTab} />
-      <Content tab={activeTab} />
-      <Footer />
-    </div>
-  )
+    <Router>
+      <div className="app">
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <SearchBox />
+          </Route>
+          <Route path="/blog">
+            <Blog />
+          </Route>
+        </Switch>
+
+        <Footer />
+      </div>
+    </Router>
+  );
 }
 
-const Content = ({ tab }) => {
-  switch (tab) {
-    default:
-      case 'guides':
-        return <SearchBox />;
-      case 'blog':
-        return <Blog />
-  }
-};
-
-ReactDOM.render(
-  <App />,
-  document.querySelector('#root')
-)
-
-
-
-
-
-
-
-
-// ON SUBMIT CLICK 
-
-// const input = document.querySelector('.city-guide__input').value;
-
-//     if (input === 'toulouse') {
-//       document.querySelector('.city-guide__initial').style.display = 'none';
-//       document.querySelector('.city-guide__template').style.display = 'flex';
-
-//     restaurants.forEach(restaurant => {
-//       if (restaurant.city === 'Toulouse') {
-//         let html = `<li>${restaurant.name} - <em>${restaurant.address}</em></li>`
-//         document.querySelector('#guide__restaurants').insertAdjacentHTML('beforeend', html);
-
-//         }
-//       }) 
-//     } 
-
+ReactDOM.render(<App />, document.querySelector("#root"));

@@ -71,20 +71,19 @@ nav li {
   padding-left: 1rem;
 }
 
-.navItem button {
+nav button {
   background: transparent;
   text-transform: uppercase;
   font-weight: bold;
+  padding: 0.5rem;
   font-size: 1rem;
   border: none;
   cursor: pointer;
 }
 
-.navItem button:focus {
+nav button:focus {
   border: none;
 }
-
-
 
 /* -----MAIN TAGLINE SECTION------- */
 
@@ -235,21 +234,6 @@ nav li {
   text-align: left;
 }
 
-/* -----YOUTUBE VIDEOS SECTION------- */
-
-.footer {
-  margin-top: 2rem;
-  padding: 1rem;
-}
-
-.video-layout {
-  margin: 1rem;
-}
-
-.video-layout iframe {
-  width: 100%;
-}
-
 
 /* -------BIGGER SCREEN MEDIA QUERIES------- */
 
@@ -262,27 +246,4 @@ nav li {
   .main {
     padding: none; 
   }
-
-  .city-guide__image {
-    display: none;
-    width: 40%;
-  }
-
-  .podcast-player {
-    width: 60%;
-  }
-
-  .video-layout {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 80%;
-    margin: 0 auto;
-  }
-
-  .video-layout iframe {
-    width: 33%;
-  }
-
-  
 }
