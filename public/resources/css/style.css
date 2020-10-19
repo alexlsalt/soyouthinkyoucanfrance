@@ -149,7 +149,7 @@ nav button:focus {
   justify-content: center;
   align-items: center;
   border: 1px solid black;
-  width: 70%;
+  width: 75%;
   padding: 1rem;
   margin: 1rem 0;
   background-color: #fff;
@@ -167,7 +167,7 @@ nav button:focus {
 }
 
 .city-guide__categories * {
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
 }
 
