@@ -69,54 +69,27 @@ export default function SearchBox() {
         }
       );
 
-
-
-      // Get Restaurant data from database
-      db.collection('restaurants')
-        .where('city', '==', text)
-        .get()
-        .then(snapshot => {
-          const data = snapshot.docs.map((doc) => doc.data());
-          setRestaurants(data);
-        })
-
-      // Get Bar data from database
-
-      db.collection('bars')
-      .where('city', '==', text)
-      .get()
-      .then((snapshot) => {
-        const data = snapshot.docs.map((doc) => doc.data());
-        setBars(data);
+      // Set state for restaurants, bars, cafes, museums, nightclubs
+      // Note: possibly add a switch structure here instead of if/else
+      ['restaurants', 'bars', 'cafes', 'nightclubs', 'museums'].forEach(el => {
+        db.collection(el)
+          .where('city', '==', text)
+          .get()
+          .then(snapshot => {
+            const data = snapshot.docs.map((doc) => doc.data());
+            if (el === 'restaurants') {
+              setRestaurants(data);
+            } else if (el === 'bars') {
+              setBars(data);
+            } else if (el === 'cafes') {
+              setCafes(data);
+            } else if (el === 'nightclubs') {
+              setNightclubs(data);
+            } else if (el === 'museums') {
+              setMuseums(data);
+            }
+          })
       })
-
-      // Get Cafe data from database
-      db.collection('cafes')
-      .where('city', '==', text)
-      .get()
-      .then((snapshot) => {
-        const data = snapshot.docs.map((doc) => doc.data());
-        setCafes(data);
-      })
-
-      // Get Nightclub data from database
-      db.collection('nightclubs')
-      .where('city', '==', text)
-      .get()
-      .then((snapshot) => {
-        const data = snapshot.docs.map((doc) => doc.data());
-        setNightclubs(data);
-      })
-
-      // Get Museum data from database
-      db.collection('museums')
-      .where('city', '==', text)
-      .get()
-      .then((snapshot) => {
-        const data = snapshot.docs.map((doc) => doc.data());
-        setMuseums(data);
-      })
-
 
       // Clear city list if displayed
       if (cityList.length) {
