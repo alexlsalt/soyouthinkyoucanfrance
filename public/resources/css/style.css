@@ -104,6 +104,7 @@ nav button:focus {
   justify-content: center;
   align-items: center;
   background-image: none;
+  padding: 4rem 0;
 }
 
 .city-guide__image {

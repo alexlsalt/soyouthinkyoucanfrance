@@ -1,0 +1,47 @@
+.blog-content {
+  padding: 2rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.blog-content li {
+  text-align: left;
+  padding-bottom: 0.5rem;
+}
+
+.blog-posts ul {
+  margin: 0 auto;
+  padding-left: 0;
+}
+
+.blog-posts li {
+  padding-bottom: 0.5rem;
+  text-align: center;
+}
+
+.blog-posts {
+  width: 100%;
+}
+
+.blog-content p {
+  text-align: left;
+}
+
+.post-list li {
+  padding: 1rem 6rem;
+  border-bottom: 3px solid #E77166;
+  width: 100%;
+  font-weight: bold;
+}
+
+.post-list li:hover {
+  background-color: #ccc;
+}
+
+.back-button {
+  border: none;
+  background: transparent;
+  padding: 0.5rem;
+  border-bottom: 2px solid darkgray;
+  cursor: pointer;
+}
