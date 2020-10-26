@@ -19,6 +19,8 @@ From there, the idea of So You Think You Can France was born as a resource for c
 
 ### How it works
 
+[View a live demo >>](https://www.loom.com/share/8aa47e80137e40cca785d9c74a4db2d8)
+
 The main feature of the app itself are the city guides of various French cities. Over the course of my time as a teaching assistant, I was able to source hundreds of assistants' experiences in their own respective host cities through a Google form and TAPIF Facebook groups. 
 
 From there, I built out pages of French city guides with the following categories:
@@ -81,11 +83,7 @@ const handleSubmit = (event) => {
 
 
 
-## Ongoing considerations
-
-### - Blog
-
-I'm currently working on the Blog section of the app. The posts are already written (the website was live a few years back and hosted on Squarespace), so I think it will just be a matter of storing the post data and rendering it or implementing React Router and routing to each blog post. 
+## Ongoing considerations 
 
 ### - Consolidating useState hooks (possibly look in to useReducer)
 
