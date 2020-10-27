@@ -37,11 +37,11 @@ From there, I built out pages of French city guides with the following categorie
 - Best & Worst Things About City
 - Pro-Tips from Past & Current Teaching Assistants
 
-All of the data is stored in Firebase Firestore, and each time a user inputs a French city to search, the app makes a call to the database to fetch each category's information. If the category is empty (i.e. no restaurants in a specified city are listed within the restaurant collection, the restaurant section of the city guide is not rendered).
+All of the data is stored in Firebase Firestore, and each time a user inputs a French city to search, the app makes a call to the database to fetch each category's information. If the category is empty (i.e. no restaurants in a specified city are listed within the restaurant collection), that specific category section of the city guide is not rendered.
 
 ## Features 
 
-The app itself is made up of a City Guide search functionality and a Blog. (Note: Blog is still under construction)
+The app itself is made up of a City Guide search functionality and a Blog.
 
 The main City Guide SearchBox component is where of the of app's state can be found. I'm still working through consolidating all of the useState hooks (there are quite a few), but so far, this gets the job done, functionally.
 
